@@ -13,7 +13,7 @@ class_names = ["001.Black_footed_Albatross", "002.Laysan_Albatross", "003.Sooty_
 model = models.resnet50(weights='IMAGENET1K_V1')
 num_classes = len(class_names)
 model.fc = torch.nn.Linear(model.fc.in_features, num_classes)
-model.load_state_dict(torch.load('bird_model.pth'))
+model.load_state_dict(torch.load('bird_model_checkpoint.pth'))
 model.eval()
 
 # Define image transformations
